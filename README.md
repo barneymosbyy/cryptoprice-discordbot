@@ -1,6 +1,6 @@
-﻿# solana-price-discordbot
+﻿# cryptoprice-discordbot
 
-This discord bot follows the SOL/USD price using the Pyth Oracle (https://pyth.network/)
+This discord bot follows the SOL/USD price using the Pyth Oracle (https://pyth.network/), but can be changed to any cryptocurrency available on the Pyth Network. To change to different crypto, simply change the account_key in the pyth.py file to a different price feed ID (https://pyth.network/developers/price-feed-ids#solana-mainnet-beta)
 
 Here is a link for a live discord bot to try out on your own server https://discord.com/api/oauth2/authorize?client_id=1100374130060165190&permissions=0&scope=bot
 
