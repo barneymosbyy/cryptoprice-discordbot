@@ -1,7 +1,7 @@
 import discord
 from pyth import get_price, asyncio
 
-TOKEN = "YOUR DISCORD TOKEN"
+TOKEN = "YOUR SECRET DISCORD TOKEN"
 status = discord.Status.online
 intents = discord.Intents.default()
 client = discord.Client(intents=intents, status=status)
@@ -9,9 +9,12 @@ client = discord.Client(intents=intents, status=status)
 
 async def update_activity():
     while True:
-        price = await get_price()
-        activity = discord.Activity(type=discord.ActivityType.watching, name=f"${price:.2f}")
-        await client.change_presence(activity=activity)
+        try:
+            price = await get_price()
+            activity = discord.Activity(type=discord.ActivityType.watching, name=f"${price:.2f}")
+            await client.change_presence(activity=activity)
+        except ConnectionResetError:
+            print("Cannot write to closing transport. Retrying...")
         await asyncio.sleep(5)
 
 
