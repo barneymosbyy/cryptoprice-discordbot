@@ -4,4 +4,5 @@ This discord bot follows the SOL/USD price using the Pyth Oracle (https://pyth.n
 
 Here is a link for a live discord bot to try out on your own server https://discord.com/api/oauth2/authorize?client_id=1100126076572798998&permissions=0&scope=bot
 
-![rTKQlYA](https://user-images.githubusercontent.com/25880864/235738940-56838674-f7be-43c4-9d97-1bba3f05afed.jpg)
+
+![bot](https://github.com/0xmakerr/cryptoprice-discordbot/assets/25880864/545f4c0f-f7bf-4424-9f24-b6c312aa74ac)
