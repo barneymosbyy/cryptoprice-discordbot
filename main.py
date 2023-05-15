@@ -1,7 +1,8 @@
 import discord
+from random import randint
 from pyth import get_price, asyncio
 
-TOKEN = "YOUR SECRET DISCORD TOKEN"
+TOKEN = "YOUR SECRET TOKEN"
 SYMBOL = "SOL/USD"
 
 status = discord.Status.online
@@ -20,9 +21,12 @@ async def change_nickname():
                     continue
                 except discord.errors.NotFound: # Guild not found or bot is not a member of the guild
                     continue
+                except OSError as e:
+                    print(f"Error occurred: {e}. Retrying...")
+                    await asyncio.sleep(randint(30, 90))
         except ConnectionResetError:
             print("Cannot write to closing transport. Retrying...")
-        await asyncio.sleep(8)
+        await asyncio.sleep(randint(5, 10))
 
 @client.event
 async def on_ready():
