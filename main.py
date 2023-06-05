@@ -9,6 +9,7 @@ status = discord.Status.online
 intents = discord.Intents.default()
 client = discord.Client(intents=intents, status=status)
 
+
 async def change_nickname():
     while True:
         try:
@@ -24,9 +25,13 @@ async def change_nickname():
                 except OSError as e:
                     print(f"Error occurred: {e}. Retrying...")
                     await asyncio.sleep(randint(30, 90))
+                except Exception as e:
+                    print("Error:", e)
+                    await asyncio.sleep(60)
         except ConnectionResetError:
             print("Cannot write to closing transport. Retrying...")
         await asyncio.sleep(randint(5, 10))
+
 
 @client.event
 async def on_ready():
