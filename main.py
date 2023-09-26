@@ -8,7 +8,7 @@ from pyth import get_price, get_price_change, asyncio
 
 load_dotenv()
 DISCORD_API_KEY = os.getenv('DISCORD_API_KEY')
-SYMBOL = "SOL/USD"
+SYMBOL = "BTC/USD"
 GREEN = 0x229e8b
 GREEN_COLOR_VALUE = 2268811
 RED = 0xc92a35
