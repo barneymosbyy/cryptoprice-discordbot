@@ -31,7 +31,7 @@ async def change_nickname():
             if current_date != previous_day:
                 daily_close_price = await get_price_change()
                 previous_day = current_date
-            change_percentage = (price - daily_close_price) / daily_close_price * 100
+            change_percentage = round((price - daily_close_price) / daily_close_price * 100, 2)
             for guild in client.guilds:
                 try:
                     await guild.me.edit(nick=f"{price:.2f} ({change_percentage:.2f}%)")
