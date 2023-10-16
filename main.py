@@ -17,7 +17,8 @@ DEFAULT_COLOR_VALUE = 0
 
 status = discord.Status.online
 intents = discord.Intents.default()
-client = discord.Client(intents=intents, status=status)
+activity = discord.Activity(type=discord.ActivityType.watching, name=SYMBOL)
+client = discord.Client(intents=intents, status=status, activity=activity)
 previous_day = None
 
 
@@ -76,8 +77,6 @@ async def change_nickname():
 @client.event
 async def on_ready():
     print(f'{client.user} has connected to Discord!')
-    activity = discord.Activity(type=discord.ActivityType.watching, name=SYMBOL)
-    await client.change_presence(activity=activity)
     client.loop.create_task(change_nickname())
 
 client.run(DISCORD_API_KEY)
