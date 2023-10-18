@@ -24,6 +24,9 @@ async def get_price():
             return solprice
         else:
             print("Price is not valid now. Status is", price_status)
+            await asyncio.sleep(30)
+            await solana_client.close()
+            return await get_price()
     except pythclient.exceptions.SolanaException:
         print("pythclient.exceptions.SolanaException. Waiting 30 seconds and trying again.")
         await asyncio.sleep(30)
