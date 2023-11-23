@@ -45,7 +45,7 @@ async def change_nickname():
                     except IndexError:
                         # print(f"Missing the 2 role setup to change role color in {guild.name}")
                         continue
-                    if role:
+                    if role and guild.me.guild_permissions.manage_roles:
                         if change_percentage > 0 and role.color.value != GREEN_COLOR_VALUE:
                             await role.edit(color=discord.Color(GREEN))
                             # print(f"Changing to green in {guild.name}")
@@ -55,8 +55,6 @@ async def change_nickname():
                         elif change_percentage == 0 and role.color.value != DEFAULT_COLOR_VALUE:
                             await role.edit(color=discord.Color(0x000000))
                             # print(f"Changing to default in {guild.name}")
-                    else:
-                        print("Role missing")
                 except discord.errors.Forbidden:
                     print("Missing permissions")
                     continue
