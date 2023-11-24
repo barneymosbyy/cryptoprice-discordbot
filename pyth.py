@@ -7,7 +7,7 @@ from pythclient.pythaccounts import PythPriceAccount, PythPriceStatus
 from pythclient.solana import SolanaClient, SolanaPublicKey, PYTHNET_HTTP_ENDPOINT, PYTHNET_WS_ENDPOINT
 
 PYTH_EVM_PRICE_ID = "0xe62df6c8b4a85fe1a67db44dc12de5db330f7ac66b72dc658afedf0f4a415b43"
-SOLANA_PRICE_ID = "GVXRSBjFk6e6J3NbVPXohDJetcTjaeeuykUpbQF8UoMU"
+SOLANA_PRICE_ID = "nrYkQQQur7z8rYTST3G9GqATviK5SxTDkrqd21MW6Ue"
 
 
 async def get_price():
